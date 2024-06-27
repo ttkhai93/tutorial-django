@@ -9,3 +9,10 @@
 
 ## Run all migrations that haven’t been applied
 - python manage.py migrate
+
+## Run tests
+- python manage.py test [polls]
+
+## Check coverage
+- coverage run --source='.' manage.py test [polls]
+- coverage report

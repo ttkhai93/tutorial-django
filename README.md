@@ -1,6 +1,9 @@
 ## Run (Development environment only)
 - python manage.py runserver
 
+## Run (Production environment)
+- gunicorn mysite.wsgi
+
 ## Make migrations
 - python manage.py makemigrations [polls]
 

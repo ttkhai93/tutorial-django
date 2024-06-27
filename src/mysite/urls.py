@@ -18,9 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import polls.urls
+import products.urls
 
 urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
     path("admin/", admin.site.urls),
     path("polls/", include(polls.urls)),
+    path("products/", include(products.urls)),
 ]

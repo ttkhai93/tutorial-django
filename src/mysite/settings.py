@@ -39,6 +39,7 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     "polls.apps.PollsConfig",
+    "products.apps.ProductsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

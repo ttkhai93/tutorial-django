@@ -1,9 +1,29 @@
+<a href="{% url 'products:cart' %}">See my cart</a>
+
 {% if product_list %}
 <ul>
     {% for product in product_list %}
-    <li><a href="{% url 'products:detail' product.id %}">{{ product.name }}</a></li>
+    <li><a href="{% url 'products:detail' product.id %}">{{ product.name }}</a> <button
+            onclick="addToCart('{{product.id}}');">Add to card</button></li>
     {% endfor %}
 </ul>
 {% else %}
 <p>No products are available.</p>
 {% endif %}
+
+
+<script>
+    function addToCart(product_id) {
+        let shopping_cart = localStorage.getItem("shopping_cart")
+        if (shopping_cart == null) {
+            let product_list = [product_id]
+            localStorage.setItem("shopping_cart", JSON.stringify(product_list))
+        } else {
+            let product_list = JSON.parse(shopping_cart)
+            if (!product_list.includes(product_id)) {
+                product_list.push(product_id)
+                localStorage.setItem("shopping_cart", JSON.stringify(product_list))
+            }
+        }
+    }
+</script>

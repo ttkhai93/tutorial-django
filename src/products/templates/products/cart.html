@@ -1,0 +1,11 @@
+<p id="product_list"></p>
+<a href="#">Confirm order</a>
+<script>
+    function viewCart() {
+        let product_list = JSON.parse(localStorage.getItem("shopping_cart"))
+        for (let id of product_list) {
+            document.getElementById("product_list").innerHTML += "<li>" + id + "</li>"
+        }
+    }
+    viewCart()
+</script>

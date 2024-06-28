@@ -6,13 +6,17 @@ from django.views import generic
 from .models import Product
 
 
-class IndexView(generic.ListView):
+class ProductIndexView(generic.ListView):
     template_name = "products/index.html"
 
     def get_queryset(self) -> QuerySet[Any]:
         return Product.objects.all()
 
 
-class DetailView(generic.DetailView):
+class ProductDetailView(generic.DetailView):
     template_name = "products/detail.html"
     model = Product
+
+
+def cart(request):
+    return render(request, "products/cart.html")
